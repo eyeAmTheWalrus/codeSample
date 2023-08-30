@@ -36,9 +36,9 @@ greenCurveY = greenCurveFnc(greenCurveX)
 #define curve demarcating red and cyan
 redX = data.Critx[2:8]
 redY = data.Crity[2:8]
-redFnc_b = np.poly1d(np.polyfit(redY,redX,5))
-redCurveX_b = np.linspace(min(redY),max(redY),samples)
-redCurveY_b = redFnc_b(redCurveX_b)
+redFnc = np.poly1d(np.polyfit(redY,redX,5))
+redCurveX = np.linspace(min(redY),max(redY),samples)
+redCurveY = redFnc(redCurveX)
 
 
 #define curve demarcating blue from red.
@@ -69,7 +69,7 @@ plt.fill_between(line,fncOfLine,axisMax,color='red',interpolate=True)
 
 #fill in red region. ALL area above bottom red curve is red, including some
 #which should be cyan and some blue. this area will be overwritten soon
-plt.fill_between(redCurveX_b, redCurveY_b, axisMax, color='red', alpha=shade, interpolate=True)
+plt.fill_between(redCurveX, redCurveY, axisMax, color='red', alpha=shade, interpolate=True)
 
 #make top right blue
 plt.fill_between(blueCurveX, blueCurveY,max(blueCurveY), where=blueCurveY<=max(blueCurveY),color='b',alpha=shade)
@@ -82,10 +82,10 @@ plt.fill_between(greenCurveY, greenCurveX, min(greenCurveX), color='cyan', alpha
 
 
 #below red is cyan
-plt.fill_between(redCurveX_b, redCurveY_b, axisMin, color='cyan', alpha=shade, interpolate=True)
+plt.fill_between(redCurveX, redCurveY, axisMin, color='cyan', alpha=shade, interpolate=True)
 
 #left of red is cyan:
-plt.fill_between(redCurveY_b, redCurveX_b, axisMax, color='cyan', alpha=shade, interpolate=True)
+plt.fill_between(redCurveY, redCurveX, axisMax, color='cyan', alpha=shade, interpolate=True)
 
 #above green is cyan
 plt.fill_between(greenCurveX, greenCurveY, axisMax, color='cyan', alpha=shade, interpolate=True)
