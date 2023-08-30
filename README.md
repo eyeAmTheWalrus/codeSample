@@ -3,6 +3,7 @@ This code, taken from my thesis this past year, produces a phase diagram depicti
 strain profiles can induce transitions between distinct values of the 'Z4' invariant for topological insulators.
 
 First we obtain a sufficient amount of data points to construct a phase diagram, as seen below. 
+
 ![image](https://github.com/iAmTheWalrusOperator/codeSample/assets/123112044/525004a2-f91d-487a-85ab-72f046440fcd)
 
 
