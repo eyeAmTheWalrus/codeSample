@@ -22,8 +22,8 @@ ax1.scatter(data.Z2x,data.Z2y,25, color='cyan', label='$Z_4$=2')
 ax1.scatter(data.Z3x,data.Z3y,25, color='green',label='$Z_4$=3')
 
 
-#data.Crit contains critical points at transitions b/w distinct phases
-#for each border, we fit a polynomial to its crit. points
+#data.Crit contains critical points at transitions b/w distinct phases.
+#For each border, we fit a polynomial to its crit. points
 #later we'll use these curves as boundaries for fill region.
 
 #define curve demarcating green region from red and cyan
@@ -55,13 +55,7 @@ blueCurveY = blueFnc(blueCurveX)
 
 
 #make a small line perpendicular to y=x , at the border of red and green
-#so as to give the border between these two regions some small finite distance,
-#without throwing lots of compute time at determining whether that
-#should be 1 pixel or 10.
-#kinda handwavy but would be foolish to throw compute time at 
-#clusters of points that are at most 0.1% away from each other
-#for context pt1=0.971 and pt2=0.970
-#so just make that border a straight line from (0.97,0.971) to (0.971,0.97)
+#so as to give the border between these two regions some small finite distance
 pt1 = max(greenCurveY)
 pt2 = max(greenCurveX)
 line = np.linspace(pt1,pt2, samples)
@@ -76,19 +70,23 @@ plt.fill_between(line,fncOfLine,axisMax,color='red',interpolate=True)
 #fill in red region. ALL area above bottom red curve is red, including some
 #which should be cyan and some blue. this area will be overwritten soon
 plt.fill_between(redCurveX_b, redCurveY_b, axisMax, color='red', alpha=shade, interpolate=True)
+
 #make top right blue
 plt.fill_between(blueCurveX, blueCurveY,max(blueCurveY), where=blueCurveY<=max(blueCurveY),color='b',alpha=shade)
 
 #fill below top green curve ALL as green
 plt.fill_between(greenCurveX, greenCurveY,min(greenCurveX),color='green',interpolate=True)
+
 #fill below bottom green curve as cyan, overwriting previous.
 plt.fill_between(greenCurveY, greenCurveX, min(greenCurveX), color='cyan', alpha=shade, interpolate=True)
 
 
 #below red is cyan
 plt.fill_between(redCurveX_b, redCurveY_b, axisMin, color='cyan', alpha=shade, interpolate=True)
+
 #left of red is cyan:
 plt.fill_between(redCurveY_b, redCurveX_b, axisMax, color='cyan', alpha=shade, interpolate=True)
+
 #above green is cyan
 plt.fill_between(greenCurveX, greenCurveY, axisMax, color='cyan', alpha=shade, interpolate=True)
 
@@ -106,7 +104,7 @@ plt.yticks(np.arange(axisMin, axisMax, 0.02))
 ax1.tick_params(direction='out')
 plt.savefig('Fig5A.pdf')
 
-#Additional figure, just raw data
+#Second figure, containing just the raw data
 fig2, ax2 = plt.subplots()
 ax2.scatter(data.Z0x,data.Z0y,25, color='blue', label='$Z_4$=0')
 ax2.scatter(data.Z1x,data.Z1y,25, color='red', label='$Z_4$=1')
