@@ -26,4 +26,5 @@ Then we use NumPy to fit polynomial curves about these critical points.
 Lastly using Matplotlib we output a plot of the raw data (depicted above) and fill the area between curves with different colors, as below.
 It is also possible to modify the _shade_ variable so that each fill color is translucent, revealing the raw data points underneath. 
 
-![image](https://github.com/iAmTheWalrusOperator/codeSample/assets/123112044/65c131a1-357e-4ace-b539-db20cf0049fa)
+![image](https://github.com/iAmTheWalrusOperator/codeSample/assets/123112044/3b8cd713-7817-441f-ba69-7802fc04b3ca)
+
