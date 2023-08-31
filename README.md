@@ -16,7 +16,7 @@ Supposing the next strain profile we'd like to calculate is (a=0.975*a<sub>0</su
 
 cp -r template 0.975a-1.04b
 
-<img width="937" alt="image" src="https://github.com/iAmTheWalrusOperator/codeSample/assets/123112044/61a8664b-4d76-4a26-b327-3daf26afcc08">
+<img width="937" alt="image" src="https://github.com/iAmTheWalrusOperator/codeSample/assets/123112044/c670da50-0874-4e1c-a1bc-315f129e3c8e">
 
 When jobScript.sh is executed within this new directory, it reads the strain profile from the working directory's name.
 It then prompts a series of jobs (within the VASP and irvsp software packages) which obtain the Z4 invariant for this strain.
