@@ -4,9 +4,7 @@ strain profiles can induce transitions between distinct values of the "Z<sub>4</
 
 First we obtain a sufficient amount of data points to construct a phase diagram, as seen below. 
 
-
-![image](https://github.com/iAmTheWalrusOperator/codeSample/assets/123112044/525004a2-f91d-487a-85ab-72f046440fcd)
-
+![image](https://github.com/iAmTheWalrusOperator/codeSample/assets/123112044/7bafdc0f-fc88-4efc-b884-47df1a310fd3)
 
 
 We roughly apply a binary search to identify the critical points in the diagram, where our search space is reduced by half because of the material's crystalline mirror symmetry.
@@ -28,5 +26,4 @@ Then we use NumPy to fit polynomial curves about these critical points.
 Lastly using Matplotlib we output a plot of the raw data (depicted above) and fill the area between curves with different colors, as below.
 It is also possible to modify the _shade_ variable so that each fill color is translucent, revealing the raw data points underneath. 
 
-![image](https://github.com/iAmTheWalrusOperator/codeSample/assets/123112044/9f69e32b-4dda-40aa-b757-132aba9fbd3c)
-
+![image](https://github.com/iAmTheWalrusOperator/codeSample/assets/123112044/65c131a1-357e-4ace-b539-db20cf0049fa)
