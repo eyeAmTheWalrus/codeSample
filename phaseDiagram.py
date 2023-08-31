@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-data = pd.read_csv('PhaseDiagramData2.csv')
+data = pd.read_csv('PhaseDiagramData.csv')
 shade = 1 #fill is opaque when =1 
 degree = 2 # degree of polynomial fit.
 samples = 50 #number of points to sample each curve at
